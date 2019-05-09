@@ -2,6 +2,7 @@
 #pragma warning disable 649
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIWindowSystem : MonoBehaviour
 {
@@ -38,6 +39,9 @@ public class UIWindowSystem : MonoBehaviour
         rect.anchoredPosition = new Vector2(ButtonTabs[0].GetComponent<RectTransform>().anchoredPosition.x, 0.0f);
         rect.sizeDelta = new Vector2(ButtonTabs[0].transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().preferredWidth, rect.sizeDelta.y);
         ColorButtons(0);
+        GameObject.Find("PlayModeButton").GetComponent<Button>().onClick.AddListener(() => EventManager.CallUIStateChange(UIStateManager.UIState.PlayMode));
+        GameObject.Find("UnlockingMenuButton").GetComponent<Button>().onClick.AddListener(() => EventManager.CallUIStateChange(UIStateManager.UIState.UnlockingMenu));
+        GameObject.Find("SettingsMenuButton").GetComponent<Button>().onClick.AddListener(() => EventManager.CallUIStateChange(UIStateManager.UIState.SettingsMenu));
     }
 
     private void OnValidate()
@@ -77,5 +81,4 @@ public class UIWindowSystem : MonoBehaviour
         }
         StartCoroutine(Caroutine);
     }
-
 }

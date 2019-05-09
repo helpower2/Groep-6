@@ -3,10 +3,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-using UnityEngine.UI;
-using System;
-
 
 public class UIStateManager : MonoBehaviour
 {
@@ -27,12 +23,15 @@ public class UIStateManager : MonoBehaviour
         }
         set
         {
-            switchStates(value);
+            var UIWS = GetComponent<UIWindowSystem>();
+            UIWS.StartAnimateTabFooterCaroutine(UIWS.TabFooter.GetComponent<RectTransform>(), UIWS.ButtonTabs[(int)value].GetComponent<RectTransform>().anchoredPosition, (int)value);
+            UIWS.ColorButtons((int)value);
+            callSwitchStates((int)value);
             _currentUIState = value;
         }
     }
 
-
+    [Header("Object References")]
     [SerializeField]
     private GameObject[] UIState_PlayModeObjects;
 
@@ -52,40 +51,17 @@ public class UIStateManager : MonoBehaviour
             { UIState.UnlockingMenu, UIState_UnlockingMenuObjects },
             { UIState.SettingsMenu, UIState_SettingsMenuObjects }
         };
-
-        GameObject.Find("PlayModeButton").GetComponent<Button>().onClick.AddListener(() => EventManager.CallUIStateChange(UIState.PlayMode));
-        GameObject.Find("UnlockingMenuButton").GetComponent<Button>().onClick.AddListener(() => EventManager.CallUIStateChange(UIState.UnlockingMenu));
-        GameObject.Find("SettingsMenuButton").GetComponent<Button>().onClick.AddListener(() => EventManager.CallUIStateChange(UIState.SettingsMenu));
+        callSwitchStates(0);
     }
 
-    /// <summary>
-    /// UIStateSwitcher
-    /// <para>
-    /// Manages the loading and unloading of relevant GameObjects related to the old and target UIState.
-    /// </para>
-    /// </summary>
-    /// <param name="_targetState">UIState switching to</param>
-    private void switchStates(UIState _targetState)
+    private void callSwitchStates(int _value)
     {
-        foreach (var stateKey in UIState_LookUpTable.Keys)
+        List<GameObject[]> gameObjects = new List<GameObject[]>();
+        foreach (var item in UIState_LookUpTable.Values)
         {
-            if (stateKey != _targetState)
-            {
-                var objectsToBeDisabled = UIState_LookUpTable[stateKey].Except(UIState_LookUpTable[_targetState]).ToList();
-                foreach (var objectToBeDisabled in objectsToBeDisabled)
-                {
-                    objectToBeDisabled.SetActive(false);
-                }
-            }
-            else
-            {
-                var objectsToBeEnabled = UIState_LookUpTable[stateKey];
-                foreach (var objectToBeEnabled in objectsToBeEnabled)
-                {
-                    objectToBeEnabled.SetActive(true);
-                }
-            }
+            gameObjects.Add(item);
         }
+        UIWindowSystemUtilities.switchStates(_value, gameObjects);
     }
 
     public void SetState(UIState _targetState)
