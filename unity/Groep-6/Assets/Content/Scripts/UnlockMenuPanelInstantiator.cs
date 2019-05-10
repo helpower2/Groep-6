@@ -12,12 +12,14 @@ public class UnlockMenuPanelInstantiator : MonoBehaviour
     {
         get
         {
+            Debug.Log(transform.childCount);
             return transform.childCount;
+            
         }
     }
     public void InstantiatePrefab(Texture2D _texture, string _name, int _price)
     {
-        var prefabTransform = GameObject.Instantiate(prefab.transform);
+        var prefabTransform = GameObject.Instantiate(prefab.transform, transform);
         prefabTransform.GetChild(0).GetComponent<RawImage>().texture = _texture;
         prefabTransform.GetChild(1).GetComponent<Text>().text = _name;
         prefabTransform.GetChild(2).GetComponent<Text>().text = _price.ToString() + "G";
@@ -25,7 +27,7 @@ public class UnlockMenuPanelInstantiator : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 19; i++)
         {
             InstantiatePrefab(Texture2D.blackTexture, "Sample", 750);
         }

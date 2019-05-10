@@ -20,6 +20,7 @@ public class Scroller : MonoBehaviour
     private float GetMax()
     {
         var total = (GetComponentInChildren<UnlockMenuPanelInstantiator>().childCount * 240) - (Screen.height - Utilities.FindGameObjectOrError("BottomPanel").GetComponent<RectTransform>().sizeDelta.y);
+        Debug.Log(total);
         var effectiveFloat = total > 0 ? total : 0f;
         return effectiveFloat;
     }
@@ -27,7 +28,7 @@ public class Scroller : MonoBehaviour
 
     private void Update()
     {
-
         var clampedPos = new Vector2(0.0f,Mathf.Clamp(GridRect.anchoredPosition.y, minPos, maxPos));
+        GridRect.anchoredPosition = clampedPos;
     }
 }
