@@ -49,9 +49,10 @@ public class PinchZoom : MonoBehaviour
                     temp = 0;
                 }
                 camera.orthographicSize += temp;
-                camera.orthographicSize = Mathf.Max(camera.orthographicSize, ZoomLimits.x);
+                
 
             }
         }
+        camera.orthographicSize = Mathf.Max(camera.orthographicSize, ZoomLimits.x);
     }
 }
