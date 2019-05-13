@@ -7,14 +7,21 @@ public class UnlockMenuPanelInstantiator : MonoBehaviour
 {
     [SerializeField]
     public GameObject prefab;
+    [HideInInspector]
+    public float spacing;
 
     public int childCount
     {
         get
         {
-            return transform.childCount;
+            return ChildCount;
+        }
+        internal set
+        {
+            ChildCount = value;
         }
     }
+    private int ChildCount;
     public void InstantiatePrefab(Texture2D _texture, string _name, int _price)
     {
         var prefabTransform = GameObject.Instantiate(prefab.transform, transform);
@@ -25,9 +32,11 @@ public class UnlockMenuPanelInstantiator : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < 15; i++)
+        spacing = GetComponent<VerticalLayoutGroup>().spacing;
+        for (int i = 0; i < 20; i++)
         {
             InstantiatePrefab(Texture2D.blackTexture, "Sample", 750);
+            childCount++;
         }
     }
 }

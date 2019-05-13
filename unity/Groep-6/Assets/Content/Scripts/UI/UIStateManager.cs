@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIStateManager : MonoBehaviour
 {
@@ -53,6 +54,9 @@ public class UIStateManager : MonoBehaviour
             { UIState.UnlockingMenu, UIState_UnlockingMenuObjects },
             { UIState.SettingsMenu, UIState_SettingsMenuObjects }
         };
+        bottomPanelButtons[0].GetComponent<Button>().onClick.AddListener(() => EventManager.CallUIStateChange(UIStateManager.UIState.PlayMode));
+        bottomPanelButtons[1].GetComponent<Button>().onClick.AddListener(() => EventManager.CallUIStateChange(UIStateManager.UIState.UnlockingMenu));
+        bottomPanelButtons[2].GetComponent<Button>().onClick.AddListener(() => EventManager.CallUIStateChange(UIStateManager.UIState.SettingsMenu));
         callSwitchStates(0);
     }
 
