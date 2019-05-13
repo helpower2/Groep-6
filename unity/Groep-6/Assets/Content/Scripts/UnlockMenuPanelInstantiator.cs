@@ -6,15 +6,13 @@ using UnityEngine.UI;
 public class UnlockMenuPanelInstantiator : MonoBehaviour
 {
     [SerializeField]
-    private GameObject prefab;
+    public GameObject prefab;
 
     public int childCount
     {
         get
         {
-            Debug.Log(transform.childCount);
             return transform.childCount;
-            
         }
     }
     public void InstantiatePrefab(Texture2D _texture, string _name, int _price)
@@ -27,7 +25,7 @@ public class UnlockMenuPanelInstantiator : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < 19; i++)
+        for (int i = 0; i < 15; i++)
         {
             InstantiatePrefab(Texture2D.blackTexture, "Sample", 750);
         }

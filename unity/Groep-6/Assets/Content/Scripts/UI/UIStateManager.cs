@@ -41,6 +41,8 @@ public class UIStateManager : MonoBehaviour
     [SerializeField]
     private GameObject[] UIState_SettingsMenuObjects;
 
+    public GameObject[] bottomPanelButtons;
+
     private Dictionary<UIState, GameObject[]> UIState_LookUpTable;
 
     private void Start()
