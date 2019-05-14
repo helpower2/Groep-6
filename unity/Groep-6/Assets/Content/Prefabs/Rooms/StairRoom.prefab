@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 703802308079085821}
   m_Layer: 0
   m_Name: StairRoom
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -644,4 +644,4 @@ MonoBehaviour:
     contentSprite: 1
     backgroundSpriteObject: {fileID: 9081587931097893439}
     contentSpriteObject: {fileID: 9081587931071571074}
-    position: {x: 0.5, y: -1}
+    position: {x: 0.5, y: -2}

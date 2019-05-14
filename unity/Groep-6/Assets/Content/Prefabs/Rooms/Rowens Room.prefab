@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 2587068490671615549}
   m_Layer: 0
   m_Name: Rowens Room
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -622,7 +622,7 @@ MonoBehaviour:
     contentSprite: 2
     backgroundSpriteObject: {fileID: 2459425434992452727}
     contentSpriteObject: {fileID: 2459425435742440028}
-    position: {x: 1.5, y: -1}
+    position: {x: 2.5, y: -1}
 --- !u!114 &2587068490671615549
 MonoBehaviour:
   m_ObjectHideFlags: 0
