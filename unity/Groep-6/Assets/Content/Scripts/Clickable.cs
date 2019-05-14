@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Clickeble : MonoBehaviour
+public class Clickable : MonoBehaviour
 {
     public UnityEvent OnClick = new UnityEvent();
 }
