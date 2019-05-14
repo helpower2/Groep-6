@@ -3,7 +3,22 @@ guid: f6a9b6ad36886ed4a87b040627d711f9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - blank: {fileID: -941769597684628784, guid: 330c019df7c0b4743bae2c0e8f2da6f2, type: 3}
+  - leftDoorRightDoor: {fileID: 6761973696573791442, guid: 330c019df7c0b4743bae2c0e8f2da6f2,
+      type: 3}
+  - leftDoorRightWall: {fileID: 5786862245142788840, guid: 330c019df7c0b4743bae2c0e8f2da6f2,
+      type: 3}
+  - leftWallRightDoor: {fileID: 8203644146592072518, guid: 330c019df7c0b4743bae2c0e8f2da6f2,
+      type: 3}
+  - leftWallRightWall: {fileID: -2151989937092700874, guid: 330c019df7c0b4743bae2c0e8f2da6f2,
+      type: 3}
+  - empty: {instanceID: 0}
+  - stairs: {fileID: 3931130663588598926, guid: 330c019df7c0b4743bae2c0e8f2da6f2,
+      type: 3}
+  - weedPlantation: {fileID: 21300000, guid: 89a0942e48a679343bb1e44a93272bad, type: 3}
+  - drugLab: {instanceID: 0}
+  - storage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-[System.Serializable]
-public class BaseRoomData : IRoom
+[System.Serializable, SerializeField]
+public class BaseRoomData : MonoBehaviour, IRoom
 {
     public enum _backgroundSprite
     {
@@ -16,7 +16,9 @@ public class BaseRoomData : IRoom
         emtpy,
         stairs,
         weedPlantation,
-        drugLab
+        drugLab,
+        storage
+
     }
 
     public _backgroundSprite backgroundSprite = 0;
@@ -27,7 +29,7 @@ public class BaseRoomData : IRoom
 
     public Vector2 position;
 
-    public BaseRoomData(_contentSprite contentSprite, GameObject backgroundSpriteObject, GameObject contentSpriteObject, Vector2 position)
+    public void Constructor(_contentSprite contentSprite, GameObject backgroundSpriteObject, GameObject contentSpriteObject, Vector2 position)
     {
         _backgroundSprite backgroundSprite = 0;
 
@@ -38,10 +40,10 @@ public class BaseRoomData : IRoom
         this.position = position;
     }
 
-    public void ConstructRoom(int content, int background)
+    public void ConstructRoom()
     {
-        contentSpriteObject.GetComponent<SpriteRenderer>().sprite = RoomDataSpriteSwitcher.returnContentSprite((_contentSprite)content);
-        backgroundSpriteObject.GetComponent<SpriteRenderer>().sprite = RoomDataSpriteSwitcher.returnBackgroundSprite((_backgroundSprite)background);
+        contentSpriteObject.GetComponent<SpriteRenderer>().sprite = RoomDataSpriteSwitcher.returnContentSprite(contentSprite);
+        backgroundSpriteObject.GetComponent<SpriteRenderer>().sprite = RoomDataSpriteSwitcher.returnBackgroundSprite(backgroundSprite);
     }
 
 }

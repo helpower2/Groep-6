@@ -14,5 +14,6 @@ public class SpriteReferences : MonoBehaviour
     public Sprite empty,
                      stairs,
                      weedPlantation,
-                     drugLab;
+                     drugLab,
+                     storage;
 }

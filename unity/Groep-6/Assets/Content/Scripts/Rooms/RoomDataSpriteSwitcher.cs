@@ -9,8 +9,6 @@ public static class RoomDataSpriteSwitcher
         spriteReferences = GameObject.FindObjectOfType<SpriteReferences>();
     }
 
-
-
     public static Sprite returnContentSprite(BaseRoomData._contentSprite contentSprite)
     {
         switch (contentSprite)
@@ -23,6 +21,8 @@ public static class RoomDataSpriteSwitcher
                 return spriteReferences.weedPlantation;
             case BaseRoomData._contentSprite.drugLab:
                 return spriteReferences.drugLab;
+            case BaseRoomData._contentSprite.storage:
+                return spriteReferences.storage;
         }
         return null;
     }
@@ -40,7 +40,7 @@ public static class RoomDataSpriteSwitcher
             case BaseRoomData._backgroundSprite.leftWall_RightDoor:
                 return spriteReferences.leftWallRightDoor;
             case BaseRoomData._backgroundSprite.leftWall_RightWall:
-                return spriteReferences.leftWallRightDoor;
+                return spriteReferences.leftWallRightWall;
         }
         return null;
     }
