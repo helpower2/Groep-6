@@ -27,7 +27,7 @@ public class ClickManager : MonoBehaviour
             if (hitInfo.transform != null)
             {
                 Debug.Log("Hit");
-                Clickeble clickeble = hitInfo.transform.GetComponent<Clickeble>();
+                Clickable clickeble = hitInfo.transform.GetComponent<Clickable>();
                 if (clickeble != null)
                 {
                     print("It's working");

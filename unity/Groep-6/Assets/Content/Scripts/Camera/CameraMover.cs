@@ -33,6 +33,24 @@ public class CameraMover : MonoBehaviour
             }
             transform.Translate((-vector.x * speed * camera.orthographicSize) / 400, (-vector.y * speed * camera.orthographicSize) / 400, 0);
         }
+        var pos = transform.position;
+        if (pos.y <= minPos.y)
+        {
+            pos.y = minPos.y;
+        }
+        if (pos.y >= maxPos.y)
+        {
+            pos.y = maxPos.y;
+        }
+        if (pos.x <= minPos.x)
+        {
+            pos.x = minPos.x;
+        }
+        if (pos.x >= maxPos.x)
+        {
+            pos.x = maxPos.x;
+        }
+        transform.position = pos;
     }
 }
 
