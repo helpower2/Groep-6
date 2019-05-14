@@ -7,10 +7,23 @@ using UnityEngine.EventSystems;
 [System.Serializable]
 public class EventGameObject : UnityEvent<GameObject> { }
 
+public enum InvokeType
+{
+    Clickmanager, 
+    clickable,
+    both
+}
 
 public class ClickManager : MonoBehaviour
 {
     public EventGameObject OnClick = new EventGameObject();
+    public InvokeType active = InvokeType.both;
+    public static ClickManager Instance;
+
+    private void Start()
+    {
+        Instance = this;
+    }
 
     void Update()
     {
@@ -31,8 +44,23 @@ public class ClickManager : MonoBehaviour
                 if (clickeble != null)
                 {
                     print("It's working");
-                    OnClick.Invoke(clickeble.gameObject);
-                    clickeble.OnClick.Invoke();
+                    switch (active)
+                    {
+                        case InvokeType.Clickmanager:
+                            OnClick.Invoke(clickeble.gameObject);
+                            break;
+                        case InvokeType.clickable:
+                            clickeble.OnClick.Invoke();
+                            break;
+                        case InvokeType.both:
+                            OnClick.Invoke(clickeble.gameObject);
+                            clickeble.OnClick.Invoke();
+                            break;
+                        default:
+                            break;
+                    }
+                    
+                    
                 }
                 else
                 {
