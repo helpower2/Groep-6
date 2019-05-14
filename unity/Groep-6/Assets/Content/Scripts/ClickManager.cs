@@ -92,4 +92,14 @@ public class ClickManager : MonoBehaviour
 
 
     }
+
+    public void SetActiveState(int invokeType)
+    {
+        active = (InvokeType)invokeType;
+    }
+    public void SetActiveState(InvokeType invokeType)
+    {
+        active = invokeType;
+    }
+
 }

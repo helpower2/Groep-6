@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 3516608795547108477}
   - component: {fileID: 5403017502835020599}
   - component: {fileID: 3310921829428566067}
+  - component: {fileID: 3406186045696199766}
   m_Layer: 0
   m_Name: Empty Room
   m_TagString: Room
@@ -386,7 +387,7 @@ MonoBehaviour:
     contentSprite: 0
     backgroundSpriteObject: {fileID: 3516608794930365609}
     contentSpriteObject: {fileID: 3516608794184575618}
-    position: {x: 1.5, y: -2}
+    position: {x: 2.5, y: -2}
 --- !u!68 &3310921829428566067
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -405,6 +406,19 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.5, y: 0}
   - {x: 0.5, y: 0}
+--- !u!114 &3406186045696199766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516608795547108416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05cfc4ee7d2f0745b73ab6cd9c8997c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  workerTag: Worker
 --- !u!1 &3516608795767192823
 GameObject:
   m_ObjectHideFlags: 0
