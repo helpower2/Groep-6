@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public static class RoomDataSpriteSwitcher
 {
@@ -36,13 +33,13 @@ public static class RoomDataSpriteSwitcher
         {
             case BaseRoomData._backgroundSprite.blank:
                 return spriteReferences.blank;
-            case BaseRoomData._backgroundSprite.leftDoorRightDoor:
+            case BaseRoomData._backgroundSprite.leftDoor_RightDoor:
                 return spriteReferences.leftDoorRightDoor;
-            case BaseRoomData._backgroundSprite.leftDoorRightWall:
+            case BaseRoomData._backgroundSprite.leftDoor_RightWall:
                 return spriteReferences.leftDoorRightWall;
-            case BaseRoomData._backgroundSprite.leftWallRightDoor:
+            case BaseRoomData._backgroundSprite.leftWall_RightDoor:
                 return spriteReferences.leftWallRightDoor;
-            case BaseRoomData._backgroundSprite.leftWallRightWall:
+            case BaseRoomData._backgroundSprite.leftWall_RightWall:
                 return spriteReferences.leftWallRightDoor;
         }
         return null;

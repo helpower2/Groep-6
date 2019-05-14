@@ -1,35 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-[System.Serializable]
-public class DrugLabRoomData : MonoBehaviour, IRoom
+﻿using UnityEngine;
+[System.Serializable, RequireComponent(typeof(BaseRoomData))]
+public class DrugLabRoomData : MonoBehaviour
 {
-    [System.Serializable]
-    public class RoomData : BaseRoomData
-    {
-        public _backgroundSprite backgroundSprite = 0;
-        public _contentSprite contentSprite = (_contentSprite)3;
-
-        public GameObject backgroundSpriteObject;
-        public GameObject contentSpriteObject;
-
-        public Vector2 position;
-    }
-    public RoomData roomData = new RoomData();
-
-    private void OnValidate()
-    {
-        roomData.position = this.GetComponent<Transform>().position;
-    }
+    [SerializeField]
+    public BaseRoomData roomData;
     public void Start()
     {
-        ConstructRoom();
-        roomData.position = this.GetComponent<Transform>().position;
-    }
-    public void ConstructRoom()
-    {
-        roomData.contentSpriteObject.GetComponent<SpriteRenderer>().sprite = RoomDataSpriteSwitcher.returnContentSprite(roomData.contentSprite);
-        roomData.backgroundSpriteObject.GetComponent<SpriteRenderer>().sprite = RoomDataSpriteSwitcher.returnBackgroundSprite(roomData.backgroundSprite);
+        Vector2 position = transform.position;
+        GameObject backgroundSpriteObject = transform.GetChild(0).GetChild(1).gameObject;
+        GameObject contentSpriteObject = transform.GetChild(0).GetChild(0).gameObject;
+        roomData = new BaseRoomData(BaseRoomData._contentSprite.drugLab, backgroundSpriteObject, contentSpriteObject, position);
     }
 }

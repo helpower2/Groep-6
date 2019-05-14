@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IRoom
 {
-    void ConstructRoom();
+    void ConstructRoom(int content, int background);
+
 }
