@@ -24,6 +24,7 @@ public class BaseRoomData : MonoBehaviour, IRoom
     public BackgroundSprite backgroundSprite = 0;
     public ContentSprite contentSprite = (ContentSprite)0;
 
+    //holds a reference to the background and content gameObjects of each room
     public GameObject backgroundSpriteObject;
     public GameObject contentSpriteObject;
 
@@ -41,7 +42,9 @@ public class BaseRoomData : MonoBehaviour, IRoom
         this.contentSpriteObject = contentSpriteObject;
         this.position = position;
     }
-
+    /// <summary>
+    /// Updates content and background sprites to reflect the current content and background enum values
+    /// </summary>
     public void ConstructRoom()
     {
         contentSpriteObject.GetComponent<SpriteRenderer>().sprite = RoomDataSpriteSwitcher.returnContentSprite(contentSprite);

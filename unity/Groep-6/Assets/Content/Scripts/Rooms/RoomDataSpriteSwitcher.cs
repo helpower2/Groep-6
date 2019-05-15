@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// returns a sprite from the <see cref="SpriteReferences"/> based on the enum given
+/// </summary>
 public static class RoomDataSpriteSwitcher
 {
+    //Reference to the SpriteReference script attached to the RoomHandler GameObject prefab
     private static SpriteReferences spriteReferences;
 
     static RoomDataSpriteSwitcher()

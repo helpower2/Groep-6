@@ -6,8 +6,7 @@ public class EmptyRoomData : MonoBehaviour
     public BaseRoomData roomData;
     public void Start()
     {
-        roomData = GetComponent<BaseRoomData>();
-        Debug.Log(roomData);
+        roomData = gameObject.AddComponent<BaseRoomData>();
         roomData.Initialize(BaseRoomData.ContentSprite.emtpy);
     }
 }

@@ -6,13 +6,11 @@ using System.Linq;
 public class RoomHandler : MonoBehaviour
 {
     GameObject[,] roomGrid;
-
     private void Start()
     {
         InitializeGrid();
         UpdateBackgroundSprites();
     }
-    
     void InitializeGrid()
     {
         List<GameObject> Rooms = GameObject.FindGameObjectsWithTag("Room").ToList();
@@ -22,7 +20,7 @@ public class RoomHandler : MonoBehaviour
 
         foreach (var room in Rooms)
         {
-            var pos = room.GetComponent<Transform>().position;
+            var pos = room.transform.position;
             var x = Mathf.RoundToInt(pos.x);
             var y = Mathf.RoundToInt(pos.y * -1);
             highest.x = x > highest.x ? x : highest.x;
@@ -34,7 +32,7 @@ public class RoomHandler : MonoBehaviour
         roomGrid = new GameObject[gridSize.x, gridSize.y];
         foreach (var room in Rooms)
         {
-            var pos = room.GetComponent<Transform>().position;
+            var pos = room.transform.position;
             Vector2Int worldPos = new Vector2Int();
             worldPos.x = Mathf.RoundToInt(pos.x);
             worldPos.y = Mathf.RoundToInt(pos.y * -1);
@@ -76,36 +74,37 @@ public class RoomHandler : MonoBehaviour
         if (roomGrid[x, y] != null)
         {
             var _ref = roomGrid[x, y].GetComponent<BaseRoomData>();
-            if (PointHasRoom(x - 1, y) && PointHasRoom(x + 1, y))
+            bool leftHasWall = PointHasRoom(x - 1, y);
+            bool rightHasWall = PointHasRoom(x + 1, y);
+            if (_ref != null)
             {
-                _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftDoor_RightDoor;
+                if (leftHasWall && rightHasWall)
+                {
+                    _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftDoor_RightDoor;
+                }
+                else if (leftHasWall && !rightHasWall)
+                {
+                    _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftDoor_RightWall;
+                }
+                else if (!leftHasWall && rightHasWall)
+                {
+                    _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftWall_RightDoor;
+                }
+                else
+                {
+                    _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftWall_RightWall;
+                }
+                _ref.ConstructRoom();
             }
-            else if (PointHasRoom(x - 1, y) && !PointHasRoom(x + 1, y))
-            {
-                _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftDoor_RightWall;
-            }
-            else if (!PointHasRoom(x - 1, y) && PointHasRoom(x + 1, y))
-            {
-                _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftWall_RightDoor;
-            }
-            else
-            {
-                _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftWall_RightWall;
-            }
-            _ref.ConstructRoom();
-        }
-        else
-        {
-            Debug.LogWarning("Wrong room grid index given");
         }
     }
-        
+
     bool PointHasRoom(int x, int y)
     {
         //make sure x isn't outside of array bounds
         if (x > roomGrid.GetLength(0) || x < 0)
         {
-            return false;   
+            return false;
         }
         try
         {
