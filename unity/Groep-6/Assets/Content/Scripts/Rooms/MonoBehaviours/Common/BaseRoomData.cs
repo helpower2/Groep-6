@@ -32,15 +32,8 @@ public class BaseRoomData : MonoBehaviour, IRoom
 
     public void Initialize(ContentSprite contentSprite)
     {
-        BackgroundSprite backgroundSprite = 0;
-        Vector2 position = transform.position;
-        GameObject backgroundSpriteObject = transform.GetChild(0).GetChild(1).gameObject;
-        GameObject contentSpriteObject = transform.GetChild(0).GetChild(0).gameObject;
-        this.backgroundSprite = backgroundSprite;
         this.contentSprite = contentSprite;
-        this.backgroundSpriteObject = backgroundSpriteObject;
-        this.contentSpriteObject = contentSpriteObject;
-        this.position = position;
+        this.position = transform.position;
     }
     /// <summary>
     /// Updates content and background sprites to reflect the current content and background enum values
