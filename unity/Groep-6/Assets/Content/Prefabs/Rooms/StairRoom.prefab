@@ -641,9 +641,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundSprite: 0
-  contentSprite: 0
-  backgroundSpriteObject: {fileID: 0}
-  contentSpriteObject: {fileID: 9081587931097893439}
+  contentSprite: 1
+  backgroundSpriteObject: {fileID: 9081587931097893439}
+  contentSpriteObject: {fileID: 9081587931071571074}
   position: {x: 0, y: 0}
 --- !u!114 &5090902617555233139
 MonoBehaviour:
