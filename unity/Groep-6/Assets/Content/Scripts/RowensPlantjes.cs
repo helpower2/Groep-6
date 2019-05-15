@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(IsWorkerInRoom))]
+[RequireComponent(typeof(IsWorkerInRoom), typeof(BaseRoomData))]
 public class RowensPlantjes : MonoBehaviour
 {
     public UnityFloat unityFloat;
+    public BaseRoomData roomData;
     private float growSpeed;
     private IsWorkerInRoom isWorker;
     [SerializeField] private float progress = 0f;
@@ -18,6 +19,11 @@ public class RowensPlantjes : MonoBehaviour
         isWorker = GetComponent<IsWorkerInRoom>();
         progress = 0f;
     }
+    private void Awake()
+    {
+        roomData = GetComponent<BaseRoomData>();
+        roomData.Initialize(BaseRoomData.ContentSprite.weedPlantation);
+    }
 
     private void Update()
     {
@@ -28,7 +34,7 @@ public class RowensPlantjes : MonoBehaviour
         }
         speed /= isWorker.humans.Count;
         //Debug.Log(speed + " : Speed");
-        float temp = ((Time.deltaTime * speed));
+        float temp = ((Time.deltaTime * speed) / 30f);
         //Debug.Log(temp + "Temp");
         if (!float.IsNaN(temp))
         {

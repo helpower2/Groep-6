@@ -7,6 +7,6 @@ public class DrugLabRoomData : MonoBehaviour
     public void Start()
     {
         roomData = gameObject.AddComponent<BaseRoomData>();
-        roomData.Initialize(BaseRoomData._contentSprite.drugLab);
+        roomData.Initialize(BaseRoomData.ContentSprite.drugLab);
     }
 }
