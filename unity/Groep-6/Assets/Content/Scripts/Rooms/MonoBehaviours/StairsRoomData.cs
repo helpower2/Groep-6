@@ -6,7 +6,7 @@ public class StairsRoomData : MonoBehaviour
     public BaseRoomData roomData;
     public void Awake()
     {
-        roomData = gameObject.AddComponent<BaseRoomData>();
+        roomData = gameObject.GetComponent<BaseRoomData>();
         roomData.Initialize(BaseRoomData.ContentSprite.stairs);
     }
 }

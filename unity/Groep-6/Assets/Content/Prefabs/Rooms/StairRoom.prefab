@@ -637,13 +637,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9081587931401318816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0beec6ce9f1f64c4ca4a06493a647b00, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b54a9d2d53bf4b48bf3bb0d4fd72c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundSprite: 0
   contentSprite: 0
-  backgroundSpriteObject: {fileID: 9081587931097893439}
-  contentSpriteObject: {fileID: 9081587931071571074}
+  backgroundSpriteObject: {fileID: 0}
+  contentSpriteObject: {fileID: 9081587931097893439}
   position: {x: 0, y: 0}
 --- !u!114 &5090902617555233139
 MonoBehaviour:

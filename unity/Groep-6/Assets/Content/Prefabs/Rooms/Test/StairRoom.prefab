@@ -509,6 +509,7 @@ GameObject:
   - component: {fileID: 9081587931401318830}
   - component: {fileID: 9081587931401318831}
   - component: {fileID: 8192958371183487610}
+  - component: {fileID: 3254599046016013147}
   m_Layer: 0
   m_Name: StairRoom
   m_TagString: Room
@@ -587,9 +588,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737daadc0b29c4f42ba2f4f6eed129ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomData:
-    backgroundSprite: 0
-    contentSprite: 1
-    backgroundSpriteObject: {fileID: 9081587931097893439}
-    contentSpriteObject: {fileID: 9081587931071571074}
-    position: {x: 0.5, y: -2}
+  roomData: {fileID: 0}
+--- !u!114 &3254599046016013147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081587931401318816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b54a9d2d53bf4b48bf3bb0d4fd72c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundSprite: 0
+  contentSprite: 0
+  backgroundSpriteObject: {fileID: 9081587931097893439}
+  contentSpriteObject: {fileID: 9081587931071571074}
+  position: {x: 0, y: 0}
