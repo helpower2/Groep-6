@@ -29,10 +29,12 @@ public class BaseRoomData : MonoBehaviour, IRoom
 
     public Vector2 position;
 
-    public void Constructor(_contentSprite contentSprite, GameObject backgroundSpriteObject, GameObject contentSpriteObject, Vector2 position)
+    public void Initialize(_contentSprite contentSprite)
     {
         _backgroundSprite backgroundSprite = 0;
-
+        Vector2 position = transform.position;
+        GameObject backgroundSpriteObject = transform.GetChild(0).GetChild(1).gameObject;
+        GameObject contentSpriteObject = transform.GetChild(0).GetChild(0).gameObject;
         this.backgroundSprite = backgroundSprite;
         this.contentSprite = contentSprite;
         this.backgroundSpriteObject = backgroundSpriteObject;
