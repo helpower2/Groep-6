@@ -14,5 +14,6 @@ public class SpriteReferences : MonoBehaviour
                      stairs,
                      weedPlantation,
                      drugLab,
-                     storage;
+                     storage,
+                     sellRoom;
 }
