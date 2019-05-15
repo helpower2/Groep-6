@@ -12,6 +12,7 @@ public class RoomHandler : MonoBehaviour
         InitializeGrid();
         UpdateBackgroundSprites();
     }
+    
     void InitializeGrid()
     {
         List<GameObject> Rooms = GameObject.FindGameObjectsWithTag("Room").ToList();
@@ -77,19 +78,19 @@ public class RoomHandler : MonoBehaviour
             var _ref = roomGrid[x, y].GetComponent<BaseRoomData>();
             if (PointHasRoom(x - 1, y) && PointHasRoom(x + 1, y))
             {
-                _ref.backgroundSprite = BaseRoomData._backgroundSprite.leftDoor_RightDoor;
+                _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftDoor_RightDoor;
             }
             else if (PointHasRoom(x - 1, y) && !PointHasRoom(x + 1, y))
             {
-                _ref.backgroundSprite = BaseRoomData._backgroundSprite.leftDoor_RightWall;
+                _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftDoor_RightWall;
             }
             else if (!PointHasRoom(x - 1, y) && PointHasRoom(x + 1, y))
             {
-                _ref.backgroundSprite = BaseRoomData._backgroundSprite.leftWall_RightDoor;
+                _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftWall_RightDoor;
             }
             else
             {
-                _ref.backgroundSprite = BaseRoomData._backgroundSprite.leftWall_RightWall;
+                _ref.backgroundSprite = BaseRoomData.BackgroundSprite.leftWall_RightWall;
             }
             _ref.ConstructRoom();
         }

@@ -9,37 +9,37 @@ public static class RoomDataSpriteSwitcher
         spriteReferences = GameObject.FindObjectOfType<SpriteReferences>();
     }
 
-    public static Sprite returnContentSprite(BaseRoomData._contentSprite contentSprite)
+    public static Sprite returnContentSprite(BaseRoomData.ContentSprite contentSprite)
     {
         switch (contentSprite)
         {
-            case BaseRoomData._contentSprite.emtpy:
+            case BaseRoomData.ContentSprite.emtpy:
                 return null;
-            case BaseRoomData._contentSprite.stairs:
+            case BaseRoomData.ContentSprite.stairs:
                 return spriteReferences.stairs;
-            case BaseRoomData._contentSprite.weedPlantation:
+            case BaseRoomData.ContentSprite.weedPlantation:
                 return spriteReferences.weedPlantation;
-            case BaseRoomData._contentSprite.drugLab:
+            case BaseRoomData.ContentSprite.drugLab:
                 return spriteReferences.drugLab;
-            case BaseRoomData._contentSprite.storage:
+            case BaseRoomData.ContentSprite.storage:
                 return spriteReferences.storage;
         }
         return null;
     }
 
-    public static Sprite returnBackgroundSprite(BaseRoomData._backgroundSprite backgroundSprite)
+    public static Sprite returnBackgroundSprite(BaseRoomData.BackgroundSprite backgroundSprite)
     {
         switch (backgroundSprite)
         {
-            case BaseRoomData._backgroundSprite.blank:
+            case BaseRoomData.BackgroundSprite.blank:
                 return spriteReferences.blank;
-            case BaseRoomData._backgroundSprite.leftDoor_RightDoor:
+            case BaseRoomData.BackgroundSprite.leftDoor_RightDoor:
                 return spriteReferences.leftDoorRightDoor;
-            case BaseRoomData._backgroundSprite.leftDoor_RightWall:
+            case BaseRoomData.BackgroundSprite.leftDoor_RightWall:
                 return spriteReferences.leftDoorRightWall;
-            case BaseRoomData._backgroundSprite.leftWall_RightDoor:
+            case BaseRoomData.BackgroundSprite.leftWall_RightDoor:
                 return spriteReferences.leftWallRightDoor;
-            case BaseRoomData._backgroundSprite.leftWall_RightWall:
+            case BaseRoomData.BackgroundSprite.leftWall_RightWall:
                 return spriteReferences.leftWallRightWall;
         }
         return null;

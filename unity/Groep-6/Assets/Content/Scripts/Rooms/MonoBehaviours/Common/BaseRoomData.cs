@@ -2,7 +2,7 @@
 [System.Serializable, SerializeField]
 public class BaseRoomData : MonoBehaviour, IRoom
 {
-    public enum _backgroundSprite
+    public enum BackgroundSprite
     {
         blank,
         leftDoor_RightDoor,
@@ -11,7 +11,7 @@ public class BaseRoomData : MonoBehaviour, IRoom
         leftWall_RightWall,
     }
 
-    public enum _contentSprite
+    public enum ContentSprite
     {
         emtpy,
         stairs,
@@ -21,17 +21,17 @@ public class BaseRoomData : MonoBehaviour, IRoom
 
     }
 
-    public _backgroundSprite backgroundSprite = 0;
-    public _contentSprite contentSprite = (_contentSprite)0;
+    public BackgroundSprite backgroundSprite = 0;
+    public ContentSprite contentSprite = (ContentSprite)0;
 
     public GameObject backgroundSpriteObject;
     public GameObject contentSpriteObject;
 
     public Vector2 position;
 
-    public void Initialize(_contentSprite contentSprite)
+    public void Initialize(ContentSprite contentSprite)
     {
-        _backgroundSprite backgroundSprite = 0;
+        BackgroundSprite backgroundSprite = 0;
         Vector2 position = transform.position;
         GameObject backgroundSpriteObject = transform.GetChild(0).GetChild(1).gameObject;
         GameObject contentSpriteObject = transform.GetChild(0).GetChild(0).gameObject;

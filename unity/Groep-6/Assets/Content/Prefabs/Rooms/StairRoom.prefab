@@ -511,7 +511,8 @@ GameObject:
   - component: {fileID: 730980488649565482}
   - component: {fileID: 8422797630274695189}
   - component: {fileID: 316303119077558976}
-  - component: {fileID: 703802308079085821}
+  - component: {fileID: 5508508924535052072}
+  - component: {fileID: 5090902617555233139}
   m_Layer: 0
   m_Name: StairRoom
   m_TagString: Room
@@ -627,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   workerTag: Worker
---- !u!114 &703802308079085821
+--- !u!114 &5508508924535052072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -636,12 +637,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 9081587931401318816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1993f143023ef3644840a97bb8c6f162, type: 3}
+  m_Script: {fileID: 11500000, guid: 0beec6ce9f1f64c4ca4a06493a647b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomData:
-    backgroundSprite: 3
-    contentSprite: 1
-    backgroundSpriteObject: {fileID: 9081587931097893439}
-    contentSpriteObject: {fileID: 9081587931071571074}
-    position: {x: 0.5, y: -2}
+  backgroundSprite: 0
+  contentSprite: 0
+  backgroundSpriteObject: {fileID: 9081587931097893439}
+  contentSpriteObject: {fileID: 9081587931071571074}
+  position: {x: 0, y: 0}
+--- !u!114 &5090902617555233139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081587931401318816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737daadc0b29c4f42ba2f4f6eed129ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomData: {fileID: 0}
