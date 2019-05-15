@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 6314420396619928648}
   - component: {fileID: 2587068490671615549}
   - component: {fileID: -1340027940629275409}
+  - component: {fileID: 8213172491051418114}
   m_Layer: 0
   m_Name: Sell Room
   m_TagString: Room
@@ -635,3 +636,16 @@ MonoBehaviour:
   backgroundSpriteObject: {fileID: 2459425434992452727}
   contentSpriteObject: {fileID: 2459425435742440028}
   position: {x: 0, y: 0}
+--- !u!114 &8213172491051418114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459425436514804894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6feec7da69d3641a2719e04c8d1313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomData: {fileID: 0}
