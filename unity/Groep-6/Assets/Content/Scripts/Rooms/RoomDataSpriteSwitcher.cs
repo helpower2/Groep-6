@@ -26,6 +26,8 @@ public static class RoomDataSpriteSwitcher
                 return spriteReferences.drugLab;
             case BaseRoomData.ContentSprite.storage:
                 return spriteReferences.storage;
+            case BaseRoomData.ContentSprite.sellRoom:
+                return spriteReferences.sellRoom;
         }
         return null;
     }

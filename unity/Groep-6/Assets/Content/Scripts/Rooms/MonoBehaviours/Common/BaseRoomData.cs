@@ -17,7 +17,8 @@ public class BaseRoomData : MonoBehaviour, IRoom
         stairs,
         weedPlantation,
         drugLab,
-        storage
+        storage,
+        sellRoom
 
     }
 
