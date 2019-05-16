@@ -645,7 +645,8 @@ GameObject:
   - component: {fileID: 6314420396619928648}
   - component: {fileID: 2587068490671615549}
   - component: {fileID: -1340027940629275409}
-  - component: {fileID: 2785517273273490841}
+  - component: {fileID: 434558304}
+  - component: {fileID: 186673656}
   m_Layer: 0
   m_Name: WeedPlantation
   m_TagString: Room
@@ -772,7 +773,7 @@ MonoBehaviour:
   backgroundSpriteObject: {fileID: 2459425434992452727}
   contentSpriteObject: {fileID: 2459425435742440028}
   position: {x: 0, y: 0}
---- !u!114 &2785517273273490841
+--- !u!114 &434558304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -784,12 +785,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5d0e6392035f0468c9371402510d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unityFloat:
+  progressEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1087070717}
+        m_MethodName: SetFloat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  ProssesDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 186673656}
+        m_MethodName: AddItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   roomData: {fileID: 0}
   progress: 0
+--- !u!114 &186673656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459425436514804894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6addb96530bb30442b0a574652b7c6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6165530088577601371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -925,3 +965,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6165530088577601371}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1087070717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6165530087500148390, guid: b444ea4cf1761ed4584bcadf9b4547df,
+    type: 3}
+  m_PrefabInstance: {fileID: 6165530088577601371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528f17e13599e544ab5fd888e5eec5cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

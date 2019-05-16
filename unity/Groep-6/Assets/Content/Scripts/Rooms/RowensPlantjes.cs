@@ -6,8 +6,9 @@ using UnityEngine.Events;
 [RequireComponent(typeof(IsWorkerInRoom), typeof(BaseRoomData))]
 public class RowensPlantjes : MonoBehaviour
 {
-    public UnityFloat unityFloat;
-    public BaseRoomData roomData;
+    public UnityFloat progressEvent;
+    public UnityEvent ProssesDone = new UnityEvent();
+    [HideInInspector]public BaseRoomData roomData;
     private float growSpeed;
     private IsWorkerInRoom isWorker;
     [SerializeField] private float progress = 0f;
@@ -33,13 +34,17 @@ public class RowensPlantjes : MonoBehaviour
             speed += human.Speed;
         }
         speed /= isWorker.humans.Count;
+        if (speed == 0)
+        {
+            return;
+        }
         //Debug.Log(speed + " : Speed");
         float temp = ((Time.deltaTime * speed) / 30f);
         //Debug.Log(temp + "Temp");
         if (!float.IsNaN(temp))
         {
             progress = temp + progress;
-            unityFloat.Invoke(progress);
+            progressEvent.Invoke(progress);
         }
       
         //Debug.Log(progress + " : Progress");
@@ -47,6 +52,7 @@ public class RowensPlantjes : MonoBehaviour
         {
             //weed is done
             progress = 0f;
+            ProssesDone.Invoke();
             Debug.Log("done");
         }
     }
