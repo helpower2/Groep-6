@@ -11,12 +11,12 @@ public class Money : MonoBehaviour
 
     [SerializeField]
     //The amount of money the player has
-   private float totalMoney;
+    float totalMoney;
 
     public float TotalMoney
     {
         get { return totalMoney; }
-        set { totalMoney = value; onValueChange.Invoke(totalMoney); }
+        set { totalMoney = value; }
     }
 
     void Awake()

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 [System.Serializable, SerializeField]
-public class BaseRoomData : MonoBehaviour
+public class BaseRoomData : MonoBehaviour, IRoom
 {
     public enum BackgroundSprite
     {
