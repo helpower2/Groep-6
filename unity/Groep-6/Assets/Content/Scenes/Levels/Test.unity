@@ -377,7 +377,7 @@ RectTransform:
   m_Children:
   - {fileID: 1866615033}
   m_Father: {fileID: 1297147444}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -632,6 +632,7 @@ MonoBehaviour:
   weedPlantation: {fileID: 21300000, guid: 89a0942e48a679343bb1e44a93272bad, type: 3}
   drugLab: {fileID: 0}
   storage: {fileID: 0}
+  sellRoom: {fileID: 0}
 --- !u!114 &266225812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,11 +738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0beec6ce9f1f64c4ca4a06493a647b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSprite: 0
-  contentSprite: 0
-  backgroundSpriteObject: {fileID: 0}
-  contentSpriteObject: {fileID: 0}
-  position: {x: 0, y: 0}
 --- !u!114 &434558304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,6 +1150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: roomData.position.y
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819605707025597619, guid: f65a444eae1af544ba0de36219760a84,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f65a444eae1af544ba0de36219760a84, type: 3}
@@ -1916,7 +1917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -36.08, y: -13.03}
+  m_AnchoredPosition: {x: -36.08008, y: -13.030029}
   m_SizeDelta: {x: 72.15, y: 26.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222301494
@@ -2020,7 +2021,7 @@ PrefabInstance:
     - target: {fileID: 2459425436514804893, guid: 07048a07b4668ae4fba9a1753cd01b06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2459425436514804893, guid: 07048a07b4668ae4fba9a1753cd01b06,
         type: 3}
@@ -2046,6 +2047,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 139372758, guid: 07048a07b4668ae4fba9a1753cd01b06, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657795970710281295, guid: 07048a07b4668ae4fba9a1753cd01b06,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657795970710281295, guid: 07048a07b4668ae4fba9a1753cd01b06,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -5353,6 +5368,11 @@ PrefabInstance:
         type: 3}
       propertyPath: roomData.position.y
       value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819605707025597619, guid: f65a444eae1af544ba0de36219760a84,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f65a444eae1af544ba0de36219760a84, type: 3}

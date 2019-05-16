@@ -451,7 +451,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2709813175146515962}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
