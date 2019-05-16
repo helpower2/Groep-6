@@ -11,33 +11,54 @@ public class RoomHandler : MonoBehaviour
         InitializeGrid();
         UpdateBackgroundSprites();
     }
+    /// <summary>
+    /// Constructs a grid array composed of the room objects
+    /// </summary>
     void InitializeGrid()
     {
+        //finds all rooms
         List<GameObject> Rooms = GameObject.FindGameObjectsWithTag("Room").ToList();
-
+        //highest room position offset from the centre of the game found
         Vector2Int highest = new Vector2Int(0, 0);
+        //lowest room position offset from the centre of the game found
         Vector2Int lowest = new Vector2Int(99, 99);
 
+        //loops through all rooms
         foreach (var room in Rooms)
         {
+            //gets the position of the room and rounds the x and y to individual variables
             var pos = room.transform.position;
             var x = Mathf.RoundToInt(pos.x);
             var y = Mathf.RoundToInt(pos.y * -1);
+            //lowest and highest are set to their smallest or biggest values
             highest.x = x > highest.x ? x : highest.x;
             highest.y = y > highest.y ? y : highest.y;
             lowest.x = x < lowest.x ? x : lowest.x;
             lowest.y = y < lowest.y ? y : lowest.y;
         }
+        //grid size is the difference between the lowest and highest with a 1 offset
         var gridSize = highest - lowest + new Vector2Int(1, 1);
+        //initializes the room grid
         roomGrid = new GameObject[gridSize.x, gridSize.y];
+        //populates the room grid
         foreach (var room in Rooms)
         {
+            //gets the position of the room and populates the worldPos int vector with its rounded values
             var pos = room.transform.position;
             Vector2Int worldPos = new Vector2Int();
             worldPos.x = Mathf.RoundToInt(pos.x);
             worldPos.y = Mathf.RoundToInt(pos.y * -1);
+            //posInGrid is the conversion of the world position to the grid position of the room
             var posInGrid = convertWorldSpaceToGridSpace(lowest, worldPos);
-            roomGrid[posInGrid.x, posInGrid.y] = room;
+            //makes sure room reference is not overwritten
+            if (roomGrid[posInGrid.x, posInGrid.y] == null)
+            {
+                roomGrid[posInGrid.x, posInGrid.y] = room;
+            }
+            else
+            {
+                Debug.LogWarning("position in grid : " + posInGrid + " is already populated");
+            }
         }
     }
     /// <summary>
@@ -64,6 +85,7 @@ public class RoomHandler : MonoBehaviour
     {
         SwitchRoomBackgroundSprite(x, y);
     }
+    //returns the grid indexes based on the world position of the room and the lowest offset
     Vector2Int convertWorldSpaceToGridSpace(Vector2Int lowest, Vector2Int worldSpace)
     {
         return worldSpace - lowest;
