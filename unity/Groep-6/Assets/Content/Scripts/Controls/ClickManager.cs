@@ -27,7 +27,7 @@ public class ClickManager : MonoBehaviour
 
     void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject(0))    // is the touch on the GUI
+        if (EventSystem.current.IsPointerOverGameObject())    // is the touch on the GUI
         {
             // GUI Action
             return;
