@@ -7,7 +7,6 @@ TagManager:
   - Room
   - Wall
   - Worker
-  - RoomGrid
   layers:
   - Default
   - TransparentFX

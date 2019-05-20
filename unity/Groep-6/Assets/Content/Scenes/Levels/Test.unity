@@ -1417,7 +1417,7 @@ GameObject:
   - component: {fileID: 1056901246}
   m_Layer: 0
   m_Name: Rooms
-  m_TagString: RoomGrid
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1942,11 +1942,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2045639242}
-    - target: {fileID: 5330518281887837211, guid: 07048a07b4668ae4fba9a1753cd01b06,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07048a07b4668ae4fba9a1753cd01b06, type: 3}
 --- !u!4 &1297147444 stripped
