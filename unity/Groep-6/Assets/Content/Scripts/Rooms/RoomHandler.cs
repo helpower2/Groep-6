@@ -7,6 +7,8 @@ public class RoomHandler : MonoBehaviour
 {
     GameObject[,] roomGrid;
     public GameObject emptyRoomPrefab;
+    public GameObject weedPlantationRoomPrefab;
+    public GameObject storageRoomPrefab;
     private void Start()
     {
         InitializeGrid();

@@ -46,6 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptyRoomPrefab: {fileID: 3516608795547108416, guid: a625aee00eb6f034099fb42b38b7cb65,
     type: 3}
+  weedPlantationRoomPrefab: {fileID: 2459425436514804894, guid: 07048a07b4668ae4fba9a1753cd01b06,
+    type: 3}
+  storageRoomPrefab: {fileID: 2442475787241037723, guid: bd7964523c877e94da3bc683b65fc572,
+    type: 3}
 --- !u!114 &5975301599590850863
 MonoBehaviour:
   m_ObjectHideFlags: 0
