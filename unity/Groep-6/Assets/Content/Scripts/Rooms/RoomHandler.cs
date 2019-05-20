@@ -6,18 +6,40 @@ using System.Linq;
 public class RoomHandler : MonoBehaviour
 {
     GameObject[,] roomGrid;
+    public GameObject emptyRoomPrefab;
+
     private void Start()
     {
         InitializeGrid();
         UpdateBackgroundSprites();
     }
-    void InitializeGrid()
+
+    public int[] returnRoomGrid(GameObject room)
+    {
+        int[] returnData = new int[2];
+
+        int w = roomGrid.GetLength(0);
+        int h = roomGrid.GetLength(1);
+
+        for (int x = 0; x < w; x++)
+        {
+            for (int y = 0; y < h; y++)
+            {
+                if (roomGrid[x,y].Equals(room))
+                {
+                    returnData = new int[2] { x, y };
+                }
+            }
+        }
+        return returnData;
+    }
+    public void InitializeGrid()
     {
         List<GameObject> Rooms = GameObject.FindGameObjectsWithTag("Room").ToList();
 
         Vector2Int highest = new Vector2Int(0, 0);
         Vector2Int lowest = new Vector2Int(99, 99);
-
+        #region magic omdat ik eerder comments toegevoegd heb dat alles uitlegt, maar jeffrey heeft ze verwijderd en ben te lui om ze weer te gaan schrijven
         foreach (var room in Rooms)
         {
             var pos = room.transform.position;
@@ -39,6 +61,7 @@ public class RoomHandler : MonoBehaviour
             var posInGrid = convertWorldSpaceToGridSpace(lowest, worldPos);
             roomGrid[posInGrid.x, posInGrid.y] = room;
         }
+        #endregion
     }
     /// <summary>
     /// Updates room backgrounds contextually
@@ -46,7 +69,7 @@ public class RoomHandler : MonoBehaviour
     /// loops through the whole grid to update all background sprites
     /// </para>
     /// </summary>
-    void UpdateBackgroundSprites()
+    public void UpdateBackgroundSprites()
     {
         for (int x = 0; x < roomGrid.GetLength(0); x++)
         {
