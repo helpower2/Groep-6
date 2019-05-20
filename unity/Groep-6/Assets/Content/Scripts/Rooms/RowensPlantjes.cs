@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(IsWorkerInRoom), typeof(BaseRoomData))]
+[RequireComponent(typeof(HumansInRoom), typeof(BaseRoomData))]
 public class RowensPlantjes : MonoBehaviour
 {
     public UnityFloat progressEvent;
     public UnityEvent ProssesDone = new UnityEvent();
     [HideInInspector]public BaseRoomData roomData;
     private float growSpeed;
-    private IsWorkerInRoom isWorker;
+    private HumansInRoom isWorker;
     [SerializeField] private float progress = 0f;
     public float Progress { get { return progress; } }
     public float GrowSpeed { get { return growSpeed; } set { growSpeed = value; } }
 
     private void Start()
     {
-        isWorker = GetComponent<IsWorkerInRoom>();
+        isWorker = GetComponent<HumansInRoom>();
         progress = 0f;
     }
     private void Awake()
