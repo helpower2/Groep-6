@@ -9,9 +9,11 @@ public class show_production : MonoBehaviour
 
     private Text ProductDisplay;
     int TotalUse;
+    
 
     void Start()
     {
+        
         TotalUse = 3;
        ProductDisplay = GetComponent<Text>();
         
