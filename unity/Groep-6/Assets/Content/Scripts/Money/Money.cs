@@ -16,7 +16,7 @@ public class Money : MonoBehaviour
     public float TotalMoney
     {
         get { return totalMoney; }
-        set { totalMoney = value; }
+        set { totalMoney = value; onValueChange.Invoke(totalMoney); }
     }
 
     void Awake()

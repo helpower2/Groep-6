@@ -28,5 +28,18 @@ public class StorageType : MonoBehaviour
                 return null;
         }
     }
+
+    public static float GetCost(Type type)
+    {
+        switch (type)
+        {
+            case Type.Weed:
+                return 5f;
+            case Type.Empty:
+                return 0f;
+            default:
+                return 0f;
+        }
+    }
 }
 
