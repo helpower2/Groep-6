@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2becb268a4355174080306bcb8916262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emptyRoomPrefab: {fileID: 3516608795547108416, guid: a625aee00eb6f034099fb42b38b7cb65,
+    type: 3}
 --- !u!114 &5975301599590850863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,3 +73,4 @@ MonoBehaviour:
   drugLab: {fileID: 0}
   storage: {fileID: 21300000, guid: b52040715e9a4d3478da0adef35218b9, type: 3}
   sellRoom: {fileID: 21300000, guid: 89a0942e48a679343bb1e44a93272bad, type: 3}
+  Weed: {fileID: 0}
