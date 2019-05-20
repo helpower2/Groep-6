@@ -6,12 +6,33 @@ using System.Linq;
 public class RoomHandler : MonoBehaviour
 {
     GameObject[,] roomGrid;
+    public GameObject emptyRoomPrefab;
     private void Start()
     {
         InitializeGrid();
         UpdateBackgroundSprites();
     }
-    void InitializeGrid()
+
+    public int[] returnRoomGrid(GameObject room)
+    {
+        int[] returnData = new int[2];
+
+        int w = roomGrid.GetLength(0);
+        int h = roomGrid.GetLength(1);
+
+        for (int x = 0; x < w; x++)
+        {
+            for (int y = 0; y < h; y++)
+            {
+                if (roomGrid[x, y].Equals(room))
+                {
+                    returnData = new int[2] { x, y };
+                }
+            }
+        }
+        return returnData;
+    }
+    public void InitializeGrid()
     {
         List<GameObject> Rooms = GameObject.FindGameObjectsWithTag("Room").ToList();
 
@@ -46,7 +67,7 @@ public class RoomHandler : MonoBehaviour
     /// loops through the whole grid to update all background sprites
     /// </para>
     /// </summary>
-    void UpdateBackgroundSprites()
+    public void UpdateBackgroundSprites()
     {
         for (int x = 0; x < roomGrid.GetLength(0); x++)
         {
