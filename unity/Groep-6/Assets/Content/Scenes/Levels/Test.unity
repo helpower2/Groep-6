@@ -603,6 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Store: {fileID: 56870833}
   Prefab: {fileID: 5732297058859562504, guid: d5c51d7a4a2cc63488136870c13da7d5, type: 3}
+  time: 1
 --- !u!1 &585992370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,7 +1413,7 @@ GameObject:
   - component: {fileID: 1056901246}
   m_Layer: 0
   m_Name: Rooms
-  m_TagString: Untagged
+  m_TagString: RoomGrid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

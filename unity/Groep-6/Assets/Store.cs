@@ -28,7 +28,7 @@ public class Store : MonoBehaviour
             speed += human.Speed;
         }
         speed /= 100;
-        Debug.Log("Speed: " + speed);
+        //Debug.Log("Speed: " + speed);
         if (!float.IsNaN(speed))
         {
             lastSellTime -= Time.deltaTime * speed;
