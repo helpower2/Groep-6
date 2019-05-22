@@ -9,5 +9,6 @@ public class HumanMover : MonoBehaviour
     {
         target = _target.transform;
         this.transform.position = new Vector3(_target.transform.position.x, _target.transform.position.y, this.transform.position.z);
+        
     }
 }

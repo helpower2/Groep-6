@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 56870832}
   - component: {fileID: 56870833}
   - component: {fileID: 56870840}
+  - component: {fileID: 1607885843}
   m_Layer: 0
   m_Name: Sell Room
   m_TagString: Room
@@ -548,7 +549,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951a51058bef8ad499affb2b4c635171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnitemSold:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1607885843}
+        m_MethodName: Effect_Shake
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: unityCustumer, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   timePerSell: 10
+--- !u!114 &1607885843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459425436514804894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d8adfb1f1374f4595640be10c25e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 0.1
 --- !u!1 &2626924177066490878
 GameObject:
   m_ObjectHideFlags: 0

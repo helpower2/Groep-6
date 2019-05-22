@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(StoreQueue), typeof(HumansInRoom), typeof(StorageInterFace))]
 public class Store : MonoBehaviour
 {
+    public unityCustumer OnitemSold = new unityCustumer();
     private StoreQueue storeQueue;
     private HumansInRoom humansInRoom;
     private StorageInterFace storageInterFace;
@@ -36,25 +38,28 @@ public class Store : MonoBehaviour
         
         if (lastSellTime <= 0)
         {
-            Debug.Log("timer done");
+            //Debug.Log("timer done");
             if (storeQueue.PeekCustomer() != null)
             {
-                Debug.Log("Customer");
+                //Debug.Log("Customer");
                 Customer customer = storeQueue.GetCustomer();
                 foreach (var item in customer.CustemerWants)
                 {
-                    Debug.Log("Items");
+                    //Debug.Log("Items");
                     if (storageInterFace.GetItem(item))
                     {
                         //item sold
                         Money.instance.TotalMoney += StorageType.GetCost(item);
-                        Debug.Log("Sold" + item.ToString());
+                        OnitemSold.Invoke(customer);
+                        //Debug.Log("Sold" + item.ToString());
                     }
                 }
-                Destroy(customer.gameObject);
+                Destroy(customer.gameObject, 5);
                 lastSellTime = timePerSell;
                 
             }
         }
     }
 }
+[Serializable]
+public class unityCustumer : UnityEvent<Customer> { }
