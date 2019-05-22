@@ -5,10 +5,11 @@ using System.Linq;
 
 public class RoomHandler : MonoBehaviour
 {
-    GameObject[,] roomGrid;
+    public GameObject[,] roomGrid;
     public GameObject emptyRoomPrefab;
     public GameObject weedPlantationRoomPrefab;
     public GameObject storageRoomPrefab;
+    public GameObject stairsRoomPrefab;
     private void Start()
     {
         InitializeGrid();
@@ -26,9 +27,12 @@ public class RoomHandler : MonoBehaviour
         {
             for (int y = 0; y < h; y++)
             {
-                if (roomGrid[x, y].Equals(room))
+                if (PointHasRoom(x, y))
                 {
-                    returnData = new int[2] { x, y };
+                    if (roomGrid[x, y] == room)
+                    {
+                        returnData = new int[2] { x, y };
+                    }
                 }
             }
         }
@@ -122,7 +126,7 @@ public class RoomHandler : MonoBehaviour
         }
     }
 
-    bool PointHasRoom(int x, int y)
+    public bool PointHasRoom(int x, int y)
     {
         //make sure x isn't outside of array bounds
         if (x > roomGrid.GetLength(0) || x < 0)
