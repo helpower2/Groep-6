@@ -39,7 +39,7 @@ public class RowensPlantjes : MonoBehaviour
             return;
         }
         //Debug.Log(speed + " : Speed");
-        float temp = ((Time.deltaTime * speed) / 30f);
+        float temp = ((Time.deltaTime * speed) / 15f);
         //Debug.Log(temp + "Temp");
         if (!float.IsNaN(temp))
         {

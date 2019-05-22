@@ -20,7 +20,7 @@ public class Customer : MonoBehaviour
     public void SetPosision(Vector2 pos)
     {
         Posision = pos;
-        Debug.Log(pos);
+        //Debug.Log(pos);
         transform.position = new Vector3(Posision.x, Posision.y, transform.position.z);
     }
     public void SetStore(StoreQueue _storeQueue)

@@ -27,17 +27,18 @@ public class ClickManager : MonoBehaviour
 
     void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject())    // is the touch on the GUI
-        {
-            // GUI Action
-            return;
-        }
-        else if (Input.GetMouseButtonDown(0))
+
+        if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("muis");
             RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition).origin, direction: Vector2.up);
-
-            if (hitInfo.transform != null)
+            if (EventSystem.current.IsPointerOverGameObject())    // is the touch on the GUI
+            {
+                // GUI Action
+                Debug.Log("hIT");
+                return;
+            }
+            else if (hitInfo.transform != null)
             {
                 Debug.Log("Hit");
                 Clickable clickeble = hitInfo.transform.GetComponent<Clickable>();
