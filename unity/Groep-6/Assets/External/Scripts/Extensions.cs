@@ -2,6 +2,7 @@
 using UnityEngine;
 public static class Extensions
 {
+    // Generic
     public static void DestroyChilds(this Transform t)
     {
         for (int i = t.childCount - 1; i >= 0; i--)
@@ -14,7 +15,6 @@ public static class Extensions
             t.GetChild(i).gameObject.SetActive(state);
     }
 
-    // Generic
     public static void Reset(this Transform t)
     {
         t.localPosition = Vector3.zero;
@@ -45,16 +45,5 @@ public static class Extensions
     public static void Effect_Shake(this Transform t, float time, float strength = 1)
     {
         t.DOShakePosition(time, strength);
-    }
-}
-public static class DataExtensions
-{
-    public static void Save<T>(this T file) where T : Data.DataFile
-    {
-        DataManager.Save(file, typeof(T).Name);
-    }
-    public static void load<T>(ref T _param, string _name)
-    {
-        DataManager.Load(ref _param, _name);
     }
 }

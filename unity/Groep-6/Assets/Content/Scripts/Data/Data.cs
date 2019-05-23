@@ -8,6 +8,5 @@ public class Data : MonoBehaviour
     {
         public string fileName { get; set; }
         public bool Effects { get; set; }
-
     }
 }
